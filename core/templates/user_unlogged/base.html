@@ -1,0 +1,73 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Bootstrap core CSS -->
+
+    <!-- Custom styles for this template -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'my_css/img/falou_logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+        </a>
+        <a class="navbar-brand" href="#">Falou</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'user_unlogged:index' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre a Falou</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user_unlogged:login' %}">Logar-se</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user_unlogged:criar-conta' %}">Criar uma conta</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user_logged:pagina-inicial-usuario' %}">pagina-inicial-usuario </a>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block  container %}
+        
+    {% endblock %}
+
+    <footer id="rodape" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; Rede-Falou.com.br</small>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

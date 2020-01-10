@@ -1,0 +1,27 @@
+{% extends 'user_unlogged/base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+<link rel="stylesheet" href="{% static 'my_css/login.css' %}">
+
+<article class="text-center" id="corpo">
+    <form class="form-signin" method="PUT">
+        <img class="mb-4" src="{% static 'my_css/img/falou_logo.png' %}" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Logar-se na Falou</h1>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Lembrar de mim
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Logar">Logar</button>
+        <a class="btn btn-lg btn-primary btn-block" href="{% url 'user_unlogged:criar-conta' %}">Criar uma conta</a>
+    </form>
+</article>
+
+{% endblock %}

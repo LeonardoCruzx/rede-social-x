@@ -1,0 +1,58 @@
+{% extends 'user_logged/base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+<article class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-3 d-none d-md-block mr-2" id="possiveis_contatos">
+            <ul class="list-group">
+                <li class="list-group-item">Pessoas que você talvez conheca</li>
+                {% for c in possiveis_contatos %}
+                <li class="list-group-item"><img src="{{c.profile_picture.url }}" alt="" class="rounded-circle"
+                        width="60px;"> {{c.nick}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+            <div class="col-12 col-md-4">
+                {% for post in posts %}
+                <div class="card">
+                    <div class="card-header bg-transparent">
+                        <div class="media">
+                            <img class="align-self-start mr-3 rounded-circle" src="{{post.autor.profile_picture.url}}"
+                                alt="..." width="50px">
+                            <div class="media-body">
+                                <h5 class="mt-0">{{post.autor}}</h5>
+                                <p class="card-text d-inline"><small class="text-muted">{{post.date_update}}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Titulooooo</h5>
+                        <p class="card-text">Texto e mais texto com algum texto e mais texto do post Texto e mais texto
+                            com algum texto e mais texto do post</p>
+                    </div>
+                    <img src="{{post.image.url}}" class="card-img-top" alt="...">
+                    <div class="text-center" id="estatisticas">
+                        <p class="card-text d-inline my-2"><small class="text-muted">{{post.likes}} curtidas,</small></p>
+                        <p class="card-text d-inline my-2"><small class="text-muted">{{post.comments}} comentarios,</small></p>
+                        <p class="card-text d-inline my-2"><small class="text-muted">{{post.shares}} compartilhamentos</small></p>
+                    </div>
+                    <div class="card-footer text-center btn-group btn-group-sm">
+                        <button class="btn border-right "><i class="far fa-thumbs-up"></i>Curtir</button>
+                        <button class="btn mx-md-4 "><i class="far fa-comment"></i>Comentar</button>
+                        <button class="btn border-left"><i class="fas fa-share"></i>Compartilhar</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+    </div>
+</div>
+
+</article>
+
+{% endblock %}

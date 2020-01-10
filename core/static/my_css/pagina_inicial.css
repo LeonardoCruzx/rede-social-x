@@ -1,0 +1,34 @@
+
+body{
+    background-color: #f1f7fd
+}
+
+.navbar{
+    background-color: rgb(217, 234, 252)
+}
+
+#possiveis_contatos{
+    margin-top: 1.5%;
+}
+
+.card{
+    margin-top: 5%;
+    width: 110%;
+    margin-left: -5%;
+}
+
+#estatisticas{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#rodape{
+    margin-top: 65%;
+}
+
+@media screen and (min-width:1200px){
+    #rodape{
+        margin-top: 17%;
+    }
+}
+
